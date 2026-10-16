@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>奶油大学（北京）欢迎页</title>
+<meta name="description" content="奶油大学（北京）欢迎页 —— 中国石油大学（北京）· 抽象奶蛙艺术">
+<meta name="theme-color" content="#3f8f5a">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='92'%3E%F0%9F%90%B8%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f4f8f1; --card:#ffffff; --ink:#1d2b23; --muted:#5d7166;
+    --line:#dfe8dc; --accent:#3f8f5a; --accent-ink:#ffffff; --accent-dark:#33754a;
+    --wash:rgba(63,143,90,.07);
+    --shadow:0 1px 2px rgba(20,40,28,.05),0 12px 32px rgba(20,40,28,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#121813; --card:#1b221c; --ink:#e8efe9; --muted:#9fb0a5;
+      --line:#2b342c; --accent:#5fbf80; --accent-ink:#0d1a12; --accent-dark:#74cf93;
+      --wash:rgba(95,191,128,.10);
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 36px rgba(0,0,0,.45);
+    }
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  main{max-width:960px; margin:0 auto; padding:clamp(24px,5vw,56px) clamp(16px,4vw,32px) 48px}
+  a{color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center; padding:clamp(8px,2vw,24px) 0 clamp(28px,5vw,48px)}
+  .badge{
+    display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); border:1px solid var(--line); background:var(--card);
+    padding:5px 12px; border-radius:999px; margin-bottom:18px;
+  }
+  h1{
+    margin:0 0 6px; font-size:clamp(28px,6vw,50px); line-height:1.15;
+    letter-spacing:.02em; font-weight:800;
+  }
+  .sub{margin:0; color:var(--muted); font-size:clamp(14px,2.6vw,18px)}
+  .sub .en{display:block; font-size:12px; letter-spacing:.1em; opacity:.75; margin-top:4px}
+  .hero-img{
+    display:block; margin:clamp(20px,4vw,34px) auto; max-width:min(420px,78vw); height:auto;
+    filter:drop-shadow(0 18px 28px rgba(20,50,32,.18)); animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @media (prefers-reduced-motion:reduce){.hero-img{animation:none}}
+  .cta{
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    background:var(--accent); color:var(--accent-ink); font-weight:700;
+    font-size:clamp(16px,3vw,20px); padding:16px 34px; border-radius:999px;
+    box-shadow:0 10px 24px rgba(63,143,90,.28); transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
+  }
+  .cta:hover,.cta:focus-visible{background:var(--accent-dark); transform:translateY(-2px)}
+  .cta:focus-visible{outline:3px solid var(--accent-dark); outline-offset:3px}
+  .cta:active{transform:translateY(0)}
+  .arrow{transition:transform .16s ease}
+  .cta:hover .arrow{transform:translateX(4px)}
+  .hint{margin:14px 0 0; font-size:13px; color:var(--muted); word-break:break-all}
+
+  /* ---------- 章节 ---------- */
+  section{margin-top:clamp(32px,6vw,56px)}
+  h2{
+    font-size:clamp(18px,3.4vw,24px); margin:0 0 16px; letter-spacing:.01em;
+    display:flex; align-items:center; gap:10px;
+  }
+  h2::after{content:""; flex:1; height:1px; background:var(--line)}
+  .lede{color:var(--muted); margin:-6px 0 18px; font-size:15px}
+
+  /* 学校名片 */
+  .facts{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:clamp(10px,2vw,16px); margin:0;
+  }
+  .facts>div{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 16px; box-shadow:var(--shadow);
+  }
+  .facts dt{font-size:12px; color:var(--muted); letter-spacing:.08em; margin:0 0 4px}
+  .facts dd{margin:0; font-weight:600; font-size:15px}
+
+  /* 大事记 */
+  .timeline{list-style:none; margin:0; padding:0 0 0 4px}
+  .timeline li{
+    position:relative; padding:0 0 16px 22px; border-left:2px solid var(--line);
+    font-size:14.5px;
+  }
+  .timeline li:last-child{border-left-color:transparent; padding-bottom:0}
+  .timeline li::before{
+    content:""; position:absolute; left:-7px; top:6px; width:12px; height:12px;
+    border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px var(--wash);
+  }
+  .timeline .year{font-weight:700; color:var(--accent); margin-right:8px; font-variant-numeric:tabular-nums}
+
+  /* 长文 */
+  .prose{max-width:70ch; font-size:15.5px}
+  .prose p{margin:0 0 14px}
+  .prose p:first-child::first-letter{font-size:1.4em; font-weight:700; color:var(--accent)}
+
+  /* 学子心声 */
+  .voice{
+    margin:0; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+    border-radius:14px; padding:22px clamp(18px,3vw,30px); box-shadow:var(--shadow);
+  }
+  .voice p{margin:0 0 12px; font-size:16px}
+  .voice p:last-child{margin:0}
+  .voice .sign{margin-top:16px; font-size:13px; color:var(--muted); text-align:right}
+
+  /* 抽象版 */
+  details.abstract{
+    background:var(--card); border:1px dashed var(--line); border-radius:14px; padding:14px 16px;
+  }
+  details.abstract summary{cursor:pointer; font-weight:600; font-size:14.5px}
+  details.abstract summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  code.emoji{
+    display:block; margin-top:12px; font-size:15px; line-height:2; word-break:break-all;
+    font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  }
+
+  /* 图鉴 / 视频 */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:clamp(12px,2.4vw,20px)}
+  figure{
+    margin:0; background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:14px; box-shadow:var(--shadow); transition:transform .18s ease;
+  }
+  figure:hover{transform:translateY(-4px)}
+  figure img{
+    display:block; width:100%; height:auto; border-radius:10px;
+    background:linear-gradient(160deg,rgba(63,143,90,.10),rgba(63,143,90,.02));
+  }
+  figcaption{margin-top:10px; font-size:13px; color:var(--muted); text-align:center}
+  video{
+    display:block; width:100%; height:auto; border-radius:16px; background:#000;
+    border:1px solid var(--line); box-shadow:var(--shadow);
+  }
+
+  /* 友情链接 */
+  .linklist{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .linklist li{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; box-shadow:var(--shadow);
+  }
+  .linklist a{font-size:15px; font-weight:600; text-decoration:none; flex:1; min-width:0}
+  .linklist a:hover{text-decoration:underline}
+  .linklist .src{
+    font-size:11px; letter-spacing:.08em; color:var(--muted);
+    border:1px solid var(--line); border-radius:999px; padding:2px 9px; white-space:nowrap;
+  }
+
+  /* 飘动的奶蛙 */
+  .pond{position:fixed; inset:0; pointer-events:none; z-index:60; overflow:hidden}
+  .pond .frog{
+    position:absolute; top:0; left:0; pointer-events:auto; cursor:pointer;
+    transition:opacity .5s ease; will-change:transform;
+  }
+  .pond .frog img{
+    display:block; filter:drop-shadow(0 8px 14px rgba(20,50,32,.25));
+    transition:transform .5s ease; transform-origin:center;
+  }
+  .pond .frog.gone{opacity:0}
+  .pond .frog.gone img{transform:scale(.25) rotate(28deg)}
+  .pond .frog img.bump{animation:bump .28s ease-out}
+  @keyframes bump{0%{transform:scale(1.18,.86)}45%{transform:scale(.9,1.12)}100%{transform:scale(1,1)}}
+  .froghud{
+    position:fixed; left:14px; bottom:14px; z-index:61; pointer-events:none;
+    font-size:12px; color:var(--muted); background:var(--card);
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px; box-shadow:var(--shadow);
+  }
+  @media (prefers-reduced-motion:reduce){.pond,.froghud{display:none}}
+
+  footer{
+    margin-top:clamp(36px,6vw,60px); padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--muted); text-align:center;
+  }
+  footer a{color:var(--accent); text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="badge">CUP · Beijing · Since 1953</div>
+    <h1>奶油大学（北京）欢迎页</h1>
+    <p class="sub">中国石油大学（北京）<span class="en">China University of Petroleum, Beijing</span></p>
+    <img class="hero-img" src="art/quanshen.png" alt="抽象奶蛙 · 全身" width="420" height="420" fetchpriority="high" decoding="async">
+    <a class="cta" href="https://www.cup.edu.cn" rel="noopener">进入中国石油大学（北京）<span class="arrow" aria-hidden="true">→</span></a>
+    <p class="hint">即将前往：www.cup.edu.cn</p>
+  </header>
+
+  <section class="intro">
+    <h2>学校名片</h2>
+    <dl class="facts">
+      <div><dt>创校</dt><dd>1953 年 · 新中国第一所石油高等院校</dd></div>
+      <div><dt>校训</dt><dd>厚积薄发，开物成务</dd></div>
+      <div><dt>校风</dt><dd>实事求是，艰苦奋斗</dd></div>
+      <div><dt>隶属</dt><dd>教育部直属全国重点大学</dd></div>
+      <div><dt>建设层次</dt><dd>211 工程 · 双一流建设高校</dd></div>
+      <div><dt>双一流学科</dt><dd>石油与天然气工程、地质资源与地质工程</dd></div>
+      <div><dt>办学格局</dt><dd>一校两地：北京昌平 · 新疆克拉玛依</dd></div>
+      <div><dt>美誉</dt><dd>石油人才的摇篮</dd></div>
+    </dl>
+  </section>
+
+  <section class="history">
+    <h2>学校介绍</h2>
+    <p class="lede">因油而生，因油而兴，因油而强，与油共进。</p>
+    <div class="prose">
+      <p>学校前身北京石油学院，以清华大学石油工程系为主体，汇聚北京大学、天津大学等高校石油师资，于 1952 年经批准设立、1953 年 10 月 1 日正式开学，是新中国第一所石油高等院校。</p>
+      <p>今天的中国石油大学（北京）是一所石油石化特色鲜明、以工为主、多学科协调发展的教育部直属全国重点大学，设有独立研究生院。校本部坐落在北京昌平军都山南麓，克拉玛依校区位于新疆维吾尔自治区克拉玛依市，一校两地办学。学校被誉为「石油人才的摇篮」，始终坚守「我为祖国献石油」的初心，与国家能源工业相依同行。</p>
+    </div>
+    <h2 style="margin-top:28px;font-size:clamp(16px,2.8vw,20px)">大事记</h2>
+    <ol class="timeline">
+      <li><span class="year">1953</span>北京石油学院正式开学，中国石油高等教育由此开端</li>
+      <li><span class="year">1960</span>被确定为全国重点高等学校</li>
+      <li><span class="year">1969</span>迁至山东东营，次年更名「华东石油学院」</li>
+      <li><span class="year">1988</span>更名「石油大学」，在北京研究生部基础上成立石油大学（北京）</li>
+      <li><span class="year">1997</span>进入首批国家「211 工程」重点建设高校行列</li>
+      <li><span class="year">2005</span>更名「中国石油大学」，同年明确北京、华东两地相对独立办学</li>
+      <li><span class="year">2017</span>入选国家「双一流」建设高校；2022 年进入新一轮「双一流」</li>
+    </ol>
+  </section>
+
+  <section class="chapter"><h2>薪火</h2><p class="lede">真拿你没办法，坐好喽。下面的故事，写给每一位石大人。</p><div class="prose"><p>真拿你没办法，坐好喽。</p><p>这是镌刻在中国高等教育与石油工业史册里，一段关于传承、拓荒与涅槃的故事。岁月长河寂静流淌，唯有薪火相传的铿锵足音与为国奉献的赤诚心跳。</p><p>上世纪五十年代，新中国百废待兴，工业血脉——石油，极度匮乏。国家能源命脉受制于人，工业强国的梦想举步维艰 。彼时的中国，急需一所顶尖学府，培养能打破封锁、为国找油的“石油尖兵” 。</p><p>目光，投向了当时中国高等教育的巅峰——清华大学。</p><p>1952年，院系调整的浪潮中，清华园里悄然酝酿着一场关乎国家能源未来的变革。以清华大学石油工程系为基石，汇聚北大、天大等名校的石油精英师资，新中国第一所石油高等学府——北京石油学院，应运而生 。它从诞生起，便流淌着清华的血脉，承载着强国的使命 。</p><p>谁也未曾预料，这颗从清华沃土中萌发的种子，会在日后的风雨磨砺中，成长为撑起中国能源半壁江山的参天大树。</p></div></section>
+
+  <section class="love">
+    <h2>学子心声</h2>
+    <blockquote class="voice">
+      <p>校训墙前，「厚积薄发，开物成务」这八个字，我们读过无数遍，也用四年去学着写。</p>
+      <p>军都山的风穿过教室窗缝，「实事求是，艰苦奋斗」在这里从来不是标语——它是早八的操场、实验室的灯、和每一次野外实习结束时那张晒黑的脸。</p>
+      <p>我们从五湖四海来，把最滚烫的几年留在府学路 18 号；又带着「我为祖国献石油」这句朴素的话，散向戈壁、荒漠与海上平台。</p>
+      <p>走得再远，别人问起母校，我们都会把腰杆挺直了说：<strong>我是石大人，我念中石大。</strong></p>
+      <p class="sign">—— 献给母校，与每一位在这里长过骨头的人</p>
+    </blockquote>
+  </section>
+
+  <section class="gallery">
+    <h2>奶蛙图鉴</h2>
+    <p class="lede">原图直出，不带透明通道。</p>
+    <div class="grid">
+      <figure><img src="art/raw/huimou.jpg" alt="抽象奶蛙 · 回眸" loading="lazy" decoding="async"><figcaption>回眸</figcaption></figure>
+      <figure><img src="art/raw/daxiao.jpg" alt="抽象奶蛙 · 大笑" loading="lazy" decoding="async"><figcaption>大笑</figcaption></figure>
+      <figure><img src="art/raw/shu.jpg" alt="抽象奶蛙 · 鼠" loading="lazy" decoding="async"><figcaption>鼠</figcaption></figure>
+      <figure><img src="art/raw/waidan.jpg" alt="抽象奶蛙 · 歪蛋" loading="lazy" decoding="async"><figcaption>歪蛋</figcaption></figure>
+      <figure><img src="art/raw/dan.jpg" alt="抽象奶蛙 · 蛋（有四肢）" loading="lazy" decoding="async"><figcaption>蛋（有四肢）</figcaption></figure>
+      <figure><img src="art/raw/quanshen.jpg" alt="抽象奶蛙 · 全身" loading="lazy" decoding="async"><figcaption>全身</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="video">
+    <h2>奶蛙动态</h2>
+    <video src="video/clip.mp4" poster="art/daxiao.png" controls muted loop playsinline preload="metadata"></video>
+  </section>
+
+  <section class="abstract-wrap"><details class="abstract"><summary>抽象版 · 表情解码 &#40;看不懂就对了&#41;</summary><code class="emoji">🪑👀📖🇨🇳🏫⛽🔥➡️🔥🏜️⛏️🦅🔥⏳🌊👣❤️🇨🇳🕰️5️⃣0️⃣🏚️➡️🏗️🏭🛢️❌🌍🔒🇨🇳💭😣🏫🎓👨‍🎓👩‍🎓🧠⚙️⛏️🔨🔒🗺️⛏️🛢️🇨🇳💪👀➡️🏛️✨📅1️⃣9️⃣5️⃣2️⃣🌊🏫🌳🏛️🛢️➕🏫➕🏫➕👨‍🏫👩‍🏫⬇️🔥🎓🛢️🇨🇳🏆🧬🏛️🎒🇨🇳🌱🏛️🌳🌱➡️🌿➡️🌳➡️🌲🌧️🌪️⚡🌲🌲🌲🇨🇳⚡🛢️💪📅1️⃣9️⃣6️⃣9️⃣🌊⚔️🏭🏫🚂🚚➡️➡️➡️📍🌊🛢️🏫🏙️👋➡️🏜️🌾💨📚⛺⛏️🛢️🌱🏫🏛️➡️🌊🏫📍🔄❤️🇨🇳⛽🇨🇳💪🏫⬇️🏫⬇️🏫⬇️🏫🇨🇳⏳7️⃣0️⃣➕🌧️☀️🌪️🌈🏫🇨🇳⭐🏆2️⃣1️⃣1️⃣🛢️🔥📈🏆🅰️➕🎓⛽🇨🇳🏛️✨➡️🧬🔥🏛️🛢️➡️📜🤝❤️❌🏫➡️🏫🔥➡️🔥➡️🔥❌👑🏰🐾🏛️🌱➡️💪🏫➡️🔥🦅➡️🏔️🏆🪶📜⚖️🏭⛽⛏️🚂👷‍♂️👨‍🎓🇨🇳</code></details></section>
+
+  <section class="links">
+    <h2>友情链接</h2>
+    <ul class="linklist">
+      <li><a href="https://www.bilibili.com/video/BV1vFpE6vE4n" target="_blank" rel="noopener noreferrer">中石大（北京）校歌 · 司凤版（仅限娱乐）</a><span class="src">bilibili</span></li>
+      <li><a href="https://www.bilibili.com/video/BV1nmp76CEkP" target="_blank" rel="noopener noreferrer">水视频，中石大校歌无参一半</a><span class="src">bilibili</span></li>
+      <li><a href="https://www.cupk.edu.cn" target="_blank" rel="noopener noreferrer">中国石油大学（北京）克拉玛依校区</a><span class="src">官网</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>奶油大学（北京）欢迎页 · 抽象奶蛙艺术</p>
+    <p><a href="https://www.cup.edu.cn" rel="noopener">www.cup.edu.cn</a></p>
+  </footer>
+</main>
+
+<div class="pond" id="pond" aria-hidden="true"></div>
+<div class="froghud" id="froghud"></div>
+<script>
+(function () {
+  var POND = document.getElementById('pond');
+  var HUD = document.getElementById('froghud');
+  if (!POND) return;
+  // 尊重系统的「减少动态效果」设置
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var SRC = ['art/quanshen.png', 'art/huimou.png', 'art/daxiao.png',
+             'art/shu.png', 'art/waidan.png', 'art/dan.png'];
+  var N = 6;
+  var frogs = [];
+  var caught = 0;
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  // 洗牌后按序取，保证这一屏 6 只奶蛙两两不同
+  var order = SRC.slice();
+  for (var s = order.length - 1; s > 0; s--) {
+    var j = Math.floor(Math.random() * (s + 1));
+    var t = order[s]; order[s] = order[j]; order[j] = t;
+  }
+
+  function updateHud() {
+    if (!HUD) return;
+    HUD.textContent = '奶蛙 ' + caught + '/' + N + (caught === N ? ' · 全抓到了' : '');
+  }
+
+  function spawn(index) {
+    var wrap = document.createElement('div');
+    wrap.className = 'frog';
+    var img = document.createElement('img');
+    img.src = order[index % order.length];
+    img.alt = '';
+    img.draggable = false;
+    var size = rand(74, 128);
+    img.style.width = size + 'px';
+    img.style.height = 'auto';
+    wrap.appendChild(img);
+    POND.appendChild(wrap);
+
+    var f = {
+      el: wrap, img: img, w: size, h: size, dead: false,
+      x: 0, y: 0,
+      vx: rand(-75, 75) || 45,
+      vy: rand(-75, 75) || 45
+    };
+    f.x = rand(0, Math.max(1, innerWidth - f.w));
+    f.y = rand(0, Math.max(1, innerHeight - f.h));
+    wrap.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px)';
+
+    wrap.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (f.dead) return;
+      f.dead = true;
+      caught++;
+      wrap.classList.add('gone');
+      setTimeout(function () { wrap.remove(); }, 520);
+      updateHud();
+    });
+
+    frogs.push(f);
+  }
+
+  var last = performance.now();
+  function frame(now) {
+    var dt = Math.min((now - last) / 1000, 0.05);
+    last = now;
+    for (var i = 0; i < frogs.length; i++) {
+      var f = frogs[i];
+      if (f.dead) continue;
+      f.x += f.vx * dt;
+      f.y += f.vy * dt;
+
+      var maxX = Math.max(0, innerWidth - f.w);
+      var maxY = Math.max(0, innerHeight - f.h);
+      var hit = false;
+      if (f.x < 0) { f.x = 0; f.vx = Math.abs(f.vx); hit = true; }
+      else if (f.x > maxX) { f.x = maxX; f.vx = -Math.abs(f.vx); hit = true; }
+      if (f.y < 0) { f.y = 0; f.vy = Math.abs(f.vy); hit = true; }
+      else if (f.y > maxY) { f.y = maxY; f.vy = -Math.abs(f.vy); hit = true; }
+
+      f.el.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px)';
+      if (hit) {
+        // 撞墙回弹时挤一下，QQ 弹弹
+        f.img.classList.remove('bump');
+        void f.img.offsetWidth;
+        f.img.classList.add('bump');
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  for (var i = 0; i < N; i++) spawn(i);
+  updateHud();
+  requestAnimationFrame(frame);
+
+  // 每次开屏重新随机：刷新页面即换一批位置
+  window.addEventListener('resize', function () {
+    for (var i = 0; i < frogs.length; i++) {
+      var f = frogs[i];
+      f.x = Math.max(0, Math.min(f.x, innerWidth - f.w));
+      f.y = Math.max(0, Math.min(f.y, innerHeight - f.h));
+    }
+  });
+})();
+</script>
+</body>
+</html>
