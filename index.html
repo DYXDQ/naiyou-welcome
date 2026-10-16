@@ -176,6 +176,19 @@
   }
   @media (prefers-reduced-motion:reduce){.pond,.froghud{display:none}}
 
+  /* 免责声明 */
+  details.disclaimer{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 16px; box-shadow:var(--shadow);
+  }
+  details.disclaimer summary{cursor:pointer; font-weight:600; font-size:14.5px}
+  details.disclaimer summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .disclaimer-body{margin-top:12px; font-size:13px; color:var(--muted); line-height:1.8}
+  .disclaimer-body p{margin:0 0 12px}
+  .disclaimer-body p:last-child{margin-bottom:0}
+  .disclaimer-body strong{color:var(--ink); display:block}
+  .disclaimer-body .mail{word-break:break-all}
+
   footer{
     margin-top:clamp(36px,6vw,60px); padding-top:20px; border-top:1px solid var(--line);
     font-size:12.5px; color:var(--muted); text-align:center;
@@ -267,12 +280,40 @@
       <li><a href="https://www.bilibili.com/video/BV1vFpE6vE4n" target="_blank" rel="noopener noreferrer">中石大（北京）校歌 · 司凤版（仅限娱乐）</a><span class="src">bilibili</span></li>
       <li><a href="https://www.bilibili.com/video/BV1nmp76CEkP" target="_blank" rel="noopener noreferrer">水视频，中石大校歌无参一半</a><span class="src">bilibili</span></li>
       <li><a href="https://www.cupk.edu.cn" target="_blank" rel="noopener noreferrer">中国石油大学（北京）克拉玛依校区</a><span class="src">官网</span></li>
+      <li><a href="https://milkyfrog.com/games" target="_blank" rel="noopener noreferrer">MilkyFrog 小游戏</a><span class="src">milkyfrog.com</span></li>
     </ul>
+  </section>
+
+  <section class="disclaimer-wrap">
+    <details class="disclaimer" id="disclaimer">
+      <summary>免责声明 · 本页面为个人娱乐作品，与该校无关</summary>
+      <div class="disclaimer-body">
+        <p><strong>一、页面性质说明</strong></p>
+        <p>本页面（以下简称“本页面”）为个人出于兴趣爱好及娱乐目的而创建的跳转页面，与中国石油大学（北京）（以下简称“该校”）及其任何学院、部门、附属机构、学生组织不存在任何隶属、合作、授权、赞助或 endorsements 关系。本页面不属于该校官方网站、官方社交媒体账号或任何形式的官方发布渠道，未经该校审查、批准或背书。本页面的内容、观点及任何表述均仅代表页面创建者个人，不代表该校的立场、观点或意见。</p>
+        <p><strong>二、娱乐目的声明</strong></p>
+        <p>本页面所包含的全部文字、图片、链接、跳转内容及其他信息，均为趣味性、抽象性及玩梗性质，纯属娱乐消遣之用。页面创建者无意通过本页面进行任何形式的暗示、影射、贬损、诽谤或人身攻击，亦无意针对该校及其师生、员工、校友或任何第三方。任何理性浏览者均不应将本页面内容解读为对任何个人或组织的负面评价、事实陈述或立场表达。本页面的目的仅在于提供轻松、幽默的浏览体验，不以盈利为目的，不用于商业用途，不涉及任何商品销售、广告推广或商业合作。</p>
+        <p><strong>三、非官方标识及名称使用说明</strong></p>
+        <p>本页面中如出现该校的名称、校徽、校训、标志性建筑名称或其他具有识别性的标识，仅出于描述、指代或娱乐性引用的目的，不构成对该校商标权、名称权、名誉权或其他合法权益的侵犯或挑战。该校对其校名、校徽及相关标识享有完整的知识产权。页面创建者尊重并承认该校对上述标识的全部权利。如该校认为本页面中任何标识的使用方式不当，页面创建者将在收到通知后立即予以删除或调整。</p>
+        <p><strong>四、知识产权与版权声明</strong></p>
+        <p>本页面的原创内容（包括但不限于页面设计、文案、代码等）由页面创建者创作，在尊重第三方权利的前提下，欢迎以非商业目的进行分享和传播。本页面中引用的第三方内容（包括但不限于图片、文字、链接所指向的内容等），其版权归原作者或原权利人所有。如有任何内容涉及版权争议，请及时联系页面创建者，页面创建者将依法配合处理，包括但不限于删除相关内容或标注正确来源。</p>
+        <p><strong>五、内容准确性与完整性</strong></p>
+        <p>本页面不对其所包含信息的准确性、完整性、时效性或适用性作出任何明示或默示的保证。本页面所提供的内容仅供娱乐参考，不构成任何形式的建议、指导或承诺。页面创建者保留在不事先通知的情况下随时修改、更新或删除本页面任何内容的权利。</p>
+        <p><strong>六、责任限制</strong></p>
+        <p>在适用法律允许的最大范围内，页面创建者不对因浏览、使用或依赖本页面内容而导致的任何直接、间接、附带、特殊或后果性损害承担责任，包括但不限于因误解、误读本页面内容而产生的任何损失或影响。浏览者应自行判断本页面内容的性质和适用性。本页面所包含的跳转链接可能指向第三方网站，页面创建者不对该等第三方网站的内容、隐私做法或行为承担任何责任。</p>
+        <p><strong>七、隐私说明</strong></p>
+        <p>本页面为纯静态跳转页面，不主动收集、存储或处理浏览者的个人信息。如页面使用了第三方统计工具或托管服务，相关数据处理行为受该第三方服务提供者的隐私政策约束。页面创建者建议浏览者查阅相关第三方的隐私政策以了解详情。</p>
+        <p><strong>八、声明变更</strong></p>
+        <p>页面创建者保留随时修改本免责声明的权利。修改后的声明将在本页面公布，并自公布之日起生效。建议浏览者定期查阅本声明以了解最新内容。</p>
+        <p><strong>九、联系方式</strong></p>
+        <p>如对本页面或本免责声明有任何疑问、意见或权利主张，请通过以下方式联系页面创建者：<br>电子邮箱：<span class="mail">3047255505@qq.com</span></p>
+        <p>最后更新日期：2026.10.16</p>
+      </div>
+    </details>
   </section>
 
   <footer>
     <p>奶油大学（北京）欢迎页 · 抽象奶蛙艺术</p>
-    <p><a href="https://www.cup.edu.cn" rel="noopener">www.cup.edu.cn</a></p>
+    <p><a href="https://www.cup.edu.cn" rel="noopener">www.cup.edu.cn</a> · <a href="https://github.com/DYXDQ/naiyou-welcome" target="_blank" rel="noopener noreferrer">GitHub 仓库</a> · <a href="#disclaimer">免责声明</a></p>
   </footer>
 </main>
 
